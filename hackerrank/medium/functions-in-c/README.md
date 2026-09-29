@@ -1,4 +1,4 @@
-# Sum and Difference of Two Numbers
+# Functions in C
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -63,21 +63,33 @@ Note: I/O will be automatically handled.
 **Language:** C  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-29T05:49:28.444Z  
+**Submitted:** 2026-09-29T05:49:38.278Z  
 
 ```c
 #include <stdio.h>
 
-int main()
-{
-    int a, b;
-    float c, d;
+int max_of_four(int a, int b, int c, int d) {
+    int max = a;
 
-    scanf("%d %d", &a, &b);
-    scanf("%f %f", &c, &d);
+    if (b > max)
+        max = b;
+    if (c > max)
+        max = c;
+    if (d > max)
+        max = d;
 
-    printf("%d %d\n", a + b, a - b);
-    printf("%.1f %.1f\n", c + d, c - d);
+    return max;
+}
+
+int main() {
+    int a, b, c, d;
+
+    scanf("%d", &a);
+    scanf("%d", &b);
+    scanf("%d", &c);
+    scanf("%d", &d);
+
+    printf("%d\n", max_of_four(a, b, c, d));
 
     return 0;
 }
